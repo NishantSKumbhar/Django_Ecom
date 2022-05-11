@@ -1,0 +1,33 @@
+{% extends 'products/base.html' %}
+{% block content %}
+	<div class="row">
+		{% for p in products %}
+		
+			<div class="card mb-3" style="max-width: 620px;">
+			  <div class="row g-0">
+			    <div class="col-md-4">
+			      <h5 class="card-title h5_title">{{ p.name }}</h5>
+			      <img src="{{ p.img_url }}" class="img-fluid rounded-start product-img" alt="Product Image">
+			      <div class="btn_buy">
+			      	<a href="#" class="btn btn-primary">Add to Cart</a>
+			  	  </div>
+			    </div>
+			    <div class="col-md-8">
+			      <div class="card-body">
+			      	<div class="article-metadata">
+				      <a class="mr-2" href="#">{{ p.user }}</a>
+				    </div>
+			        <h5 class="card-title">{{ p.name }}</h5>
+			        <h5 class="card-title">{{ p.price }} $</h5>
+			        <small><p class="card-text">{{ p.discription }}</p></small>
+			        <p class="card-text"><small class="text-muted">{{ p.import_date }}</small></p>
+			        <h6 class="card-title ">Hurry ! {{ p.stock }} left</h6>
+			    	<h4>{{ p.discount }}</h4>
+			      </div>
+			    </div>
+  				</div>
+			</div>
+			
+		{% endfor %}
+	</div>
+{% endblock content %}
